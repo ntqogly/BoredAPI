@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Bored API</string>
+    <string name="get_activity_to_do">GET ACTIVITY TO DO</string>
+    <string name="activity">Activity: </string>
+    <string name="accessibility">Accessibility: </string>
+    <string name="type">Type: </string>
+    <string name="participants">Participants: </string>
+    <string name="price">Price: </string>
+    <string name="link">Link: </string>
+    <string name="key">Key: </string>
 </resources>
