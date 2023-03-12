@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvActToDo"
+        android:id="@+id/tvAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/activity"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#034BEF"
@@ -22,7 +22,23 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/type"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#034BEF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAct"
         app:layout_constraintVertical_bias="0.3" />
 
     <androidx.constraintlayout.widget.Guideline

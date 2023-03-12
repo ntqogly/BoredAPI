@@ -7,4 +7,9 @@ interface ApiService {
 
     @GET("activity/")
     suspend fun loadActivity(): BoredActivity
+
+    @GET("activity?type=:recreational")
+    suspend fun loadActivityType(): BoredActivity
+
+
 }
