@@ -7,8 +7,10 @@ import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.lifecycle.lifecycleScope
 import com.example.boredapi.databinding.ActivityMainBinding
-import com.example.boredapi.model.ApiFactory
+import com.example.boredapi.network.ApiFactory
 import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,14 +30,17 @@ class MainActivity : AppCompatActivity() {
     private suspend fun load() {
         binding.chronometer.base = SystemClock.elapsedRealtime()
         binding.chronometer.start()
-        binding.tvActToDo.visibility = INVISIBLE
+        binding.tvAct.visibility = INVISIBLE
+        binding.tvType.visibility = INVISIBLE
         binding.getActButton.isEnabled = false
-        val activity = ApiFactory.getApiService().loadActivity()
-        binding.tvActToDo.text = activity.activity
-
+        val activityApi = ApiFactory.getApiService().loadActivity()
+        binding.tvAct.text = activityApi.activity
+//        val typeApi = ApiFactory.getApiService().loadActivityType()
+//        binding.tvType.text = typeApi.type
         binding.chronometer.stop()
         binding.getActButton.isEnabled = true
-        binding.tvActToDo.visibility = VISIBLE
+        binding.tvAct.visibility = VISIBLE
+//        binding.tvType.visibility = VISIBLE
     }
 
 }
