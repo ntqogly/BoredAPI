@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bored API</string>
+    <string name="get_activity_to_do">GET ACTIVITY TO DO</string>
 </resources>
