@@ -38,43 +38,52 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun loadActivity() {
-        binding.chronometer.base = SystemClock.elapsedRealtime()
-        binding.chronometer.start()
-        binding.tvAct.visibility = INVISIBLE
-        binding.getActButton.isEnabled = false
-        val activityApi = ApiFactory.getApiService().loadActivity()
-        binding.tvAct.text = activityApi.activity
-        binding.chronometer.stop()
-        binding.getActButton.isEnabled = true
-        binding.tvAct.visibility = VISIBLE
-
+        with(binding) {
+            chronometer.base = SystemClock.elapsedRealtime()
+            chronometer.start()
+            tvAct.visibility = INVISIBLE
+            getActButton.isEnabled = false
+            val activityApi = ApiFactory.getApiService().loadActivity()
+            tvAct.text = activityApi.activity
+            chronometer.stop()
+            getActButton.isEnabled = true
+            tvAct.visibility = VISIBLE
+        }
     }
 
     private suspend fun loadAccessibility() {
-        binding.tvAccessibility.visibility = INVISIBLE
-        val activityApi = ApiFactory.getApiService().loadActivity()
-        binding.tvAccessibility.text = activityApi.accessibility.toString()
-        binding.tvAccessibility.visibility = VISIBLE
+        with(binding) {
+            tvAccessibility.visibility = INVISIBLE
+            val activityApi = ApiFactory.getApiService().loadActivity()
+            tvAccessibility.text = activityApi.accessibility.toString()
+            tvAccessibility.visibility = VISIBLE
+        }
     }
 
     private suspend fun loadType() {
-        binding.tvType.visibility = INVISIBLE
-        val activityApi = ApiFactory.getApiService().loadActivity()
-        binding.tvType.text = activityApi.type
-        binding.tvType.visibility = VISIBLE
+        with(binding) {
+            tvType.visibility = INVISIBLE
+            val activityApi = ApiFactory.getApiService().loadActivity()
+            tvType.text = activityApi.type
+            tvType.visibility = VISIBLE
+        }
     }
 
     private suspend fun loadParticipants() {
-        binding.tvParticipants.visibility = INVISIBLE
-        val activityApi = ApiFactory.getApiService().loadActivity()
-        binding.tvParticipants.text = activityApi.participants.toString()
-        binding.tvParticipants.visibility = VISIBLE
+        with(binding) {
+            tvParticipants.visibility = INVISIBLE
+            val activityApi = ApiFactory.getApiService().loadActivity()
+            tvParticipants.text = activityApi.participants.toString()
+            tvParticipants.visibility = VISIBLE
+        }
     }
 
     private suspend fun loadPrice() {
-        binding.tvPrice.visibility = INVISIBLE
-        val activityApi = ApiFactory.getApiService().loadActivity()
-        binding.tvPrice.text = activityApi.price.toString()
-        binding.tvPrice.visibility = VISIBLE
+        with(binding) {
+            tvPrice.visibility = INVISIBLE
+            val activityApi = ApiFactory.getApiService().loadActivity()
+            tvPrice.text = activityApi.price.toString()
+            tvPrice.visibility = VISIBLE
+        }
     }
 }
